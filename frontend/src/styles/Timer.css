@@ -1,0 +1,97 @@
+
+div .timerDiv{
+    width: 750px;
+    height: 250px;
+
+    background: #FCF2F1;
+    box-sizing: border-box;
+    border-radius: 30px;
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+div .timerDiv h2{
+    margin: auto auto;
+    color: #d51067;
+    font-size: 120px;
+}
+
+div .turnDiv{
+    width: 750px;
+    height: 100px;
+
+    display: grid;
+    grid-template-columns: repeat(8, auto);
+
+    align-items: center;
+}
+
+div .turnDiv .turnPomodori{
+    background: #E7658A;
+    width: 80px;
+    height: 80px;
+
+    display: flex;
+    border-radius: 80px;
+    align-items: center;
+}
+
+div .turnDiv .turnPomodori h6{
+    margin: auto auto;
+    font-size: 30px;
+    align-items: center;
+    color: #FCF2F1;
+}
+
+div .turnDiv .turnRest {
+    background: #E7658A;
+    width: 80px;
+    height: 30px;
+
+    display: flex;
+    border-radius: 60px;
+    align-items: center;
+}
+
+div .turnDiv .turnRest h6{
+    margin: auto auto;
+    font-size: 30px;
+    align-items: center;
+    color: #FCF2F1;
+}
+
+div .turnDiv .deactivate{
+    background: #F49AAF;
+    opacity: 60%;
+
+    transition-duration: 0.5s;
+}
+
+div .turnDiv .activate{
+    transition-duration: 0.5s;
+}
+
+.divButton{
+    width: 750px;
+    display: flex;
+    align-items: center;
+}
+
+.button {
+    width: 330px;
+    height: 120px;
+    border: 0px;
+    margin: auto auto;
+    background-color: #D51067;
+    color: #FCF2F1;
+    border-radius: 60px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 100px;
+    cursor: pointer;
+  }
+
+

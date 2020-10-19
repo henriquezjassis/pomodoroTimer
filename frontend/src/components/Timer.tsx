@@ -1,5 +1,6 @@
 import React, {Component, useState, useEffect} from 'react';
 
+import '../styles/Timer.css'
 
 // interface iProps{
     
@@ -75,10 +76,38 @@ function Timer(){
     // This weird expression just adds a zero to the left if the number is less than 10, just to look like a normal clock.
     return (
         <div>
-            <p>Timer: {(time[0] < 10)?`0${time[0]}`:time[0]} : {(time[1] < 10)?`0${time[1]}`:time[1]} </p>
-            Turn : {turn} <br/>
-            Cycles Completed : {cyclesCompleted} <br/>
-            <button onClick={() => active?setActive(false):setActive(true)}> {(active)?"Stop":"Start"}</button>  
+            <div className="timerDiv">
+                <h2>{(time[0] < 10)?`0${time[0]}`:time[0]} : {(time[1] < 10)?`0${time[1]}`:time[1]}</h2>
+            </div>
+            <div className="turnDiv">
+                <div className="turnPomodori">
+                    <h6>1</h6>
+                </div>
+                <div className={`turnRest ${(turn<2)?"deactivate":"activate"}`}>
+                    <h6>2</h6>
+                </div>
+                <div className={`turnPomodori ${(turn<3)?"deactivate":"activate"}`}>
+                    <h6>3</h6>
+                </div>
+                <div className={`turnRest ${(turn<4)?"deactivate":"activate"}`}>
+                    <h6>4</h6>
+                </div>
+                <div className={`turnPomodori ${(turn<5)?"deactivate":"activate"}`}>
+                    <h6>5</h6>
+                </div>
+                <div className={`turnRest ${(turn<6)?"deactivate":"activate"}`}>
+                    <h6>6</h6>
+                </div>
+                <div className={`turnPomodori ${(turn<7)?"deactivate":"activate"}`}>
+                    <h6>7</h6>
+                </div>
+                <div className={`turnRest ${(turn<8)?"deactivate":"activate"}`}>
+                    <h6>8</h6>
+                </div>
+            </div>
+            <div className="divButton">
+                <button className="button" onClick={() => active?setActive(false):setActive(true)}> {(active)?"STOP":"START"}</button>  
+            </div>
         </div>
     )
 }

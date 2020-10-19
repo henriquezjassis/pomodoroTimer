@@ -1,0 +1,24 @@
+body{
+    background: #FCCDD6;
+}
+.App{
+    width: 750px;
+    margin: auto;
+}
+header.title{
+    width: 750px;
+    display: flex;
+    align-items: center;
+}
+
+.title h1{
+    font-size: 120px;
+    color: #D51067;
+    line-height: 10px;
+    margin: auto auto;
+}
+
+.title img{
+    width: 100px;
+    height: 100px;
+}
