@@ -7,8 +7,8 @@ function App() {
   return (
     <div className="App">
       <header className="title">
-        <h1>Pomodoro</h1>
-        <img src={tomatoImg}/>
+        <h1>Pomodoro Timer</h1>
+        {/* <img src={tomatoImg}/> */}
       </header>
       <Timer />
     </div>

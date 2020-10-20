@@ -16,6 +16,8 @@ div .timerDiv h2{
     margin: auto auto;
     color: #d51067;
     font-size: 120px;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
 }
 
 div .turnDiv{
@@ -41,6 +43,8 @@ div .turnDiv .turnPomodori{
 div .turnDiv .turnPomodori h6{
     margin: auto auto;
     font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
     align-items: center;
     color: #FCF2F1;
 }
@@ -57,7 +61,9 @@ div .turnDiv .turnRest {
 
 div .turnDiv .turnRest h6{
     margin: auto auto;
+    font-family: 'Roboto', sans-serif;
     font-size: 30px;
+    font-weight: 700;
     align-items: center;
     color: #FCF2F1;
 }
@@ -90,8 +96,13 @@ div .turnDiv .activate{
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 100px;
+    
+    font-size: 90px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    
     cursor: pointer;
+    
   }
 
 

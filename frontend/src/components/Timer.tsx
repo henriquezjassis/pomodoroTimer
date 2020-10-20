@@ -1,45 +1,27 @@
 import React, {Component, useState, useEffect} from 'react';
+import useSound from 'use-sound';
 
 import '../styles/Timer.css'
 
-// interface iProps{
-    
-// }
-
-// interface iState{
-//     min: number;
-//     sec: number;
-// }
-
-// class Timer extends Component<iProps, iState>{
-//     constructor(props: iProps) {
-//         super(props);
-//         this.state = { min: 0, sec: 0 };
-//     }
-
-//     componentDidMount(){
-//         this.setState({ min : 25, sec:0})
-//     }
-
-//     render(){
-//         return <p>Timer:  {this.state.min} : {this.state.sec}</p>
-//     }
-// }
+const bleepSFx = require('../sounds/bleep.mp3');
 
 function Timer(){
-    const shortRest = [0,4];
-    const longRest = [0,5];
-    const pomodori = [0,10];
+    const shortRest = [5,0];
+    const longRest = [15,0];
+    const pomodori = [25,0];
 
     const [time, setTime] = useState(pomodori); // time[0] --> Minutes ; time[1] --> Seconds
     const [active, setActive] = useState(false);
     const [turn, setTurn] = useState(1);
     const [cyclesCompleted , setCyclesCompleted] = useState(0);
 
+    const [play] = useSound(bleepSFx);
+
     function updateTime(){
         // Check if the timer has ended
         if( time[0] <= 0 && time[1] <= 0){ 
             setTurn(turn => turn + 1);
+            play();
             if(turn >= 8){
                 setTurn(1);
                 setCyclesCompleted(cyclesCompleted => cyclesCompleted+1);
@@ -68,7 +50,7 @@ function Timer(){
     useEffect(()=>{
         if(active){
             setTimeout(()=>{
-                updateTime();   
+                updateTime();
             }, 1000);
         }
     },[time,active])
