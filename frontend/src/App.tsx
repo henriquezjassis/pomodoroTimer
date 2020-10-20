@@ -1,7 +1,6 @@
 import React from 'react';
 import Timer from './components/Timer'
 import './styles/App.css'
-import tomatoImg from './imgs/tomato.svg'
 
 function App() {
   return (

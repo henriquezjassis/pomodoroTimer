@@ -3,25 +3,29 @@ import useSound from 'use-sound';
 
 import '../styles/Timer.css'
 
+
+// I used require instead of import 'cause with sounds import doesn't work.
 const bleepSFx = require('../sounds/bleep.mp3');
 
 function Timer(){
+    // array[0] ==> Min | array[1] ==> Seg
     const shortRest = [5,0];
     const longRest = [15,0];
     const pomodori = [25,0];
 
+    //Create Hooks that will be necessary to implement the timer.
     const [time, setTime] = useState(pomodori); // time[0] --> Minutes ; time[1] --> Seconds
     const [active, setActive] = useState(false);
     const [turn, setTurn] = useState(1);
     const [cyclesCompleted , setCyclesCompleted] = useState(0);
 
-    const [play] = useSound(bleepSFx);
+    const [play] = useSound(bleepSFx); // Get function to play the bleep sound
 
     function updateTime(){
         // Check if the timer has ended
         if( time[0] <= 0 && time[1] <= 0){ 
             setTurn(turn => turn + 1);
-            play();
+            play(); //Play sound
             if(turn >= 8){
                 setTurn(1);
                 setCyclesCompleted(cyclesCompleted => cyclesCompleted+1);
@@ -46,7 +50,7 @@ function Timer(){
         }
     }
 
-
+    // What is inside this function will run every time one of the variables inside de array change.
     useEffect(()=>{
         if(active){
             setTimeout(()=>{
